@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracker</title>
+    <style>
+        #divi {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #nameInput {
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 16px;
+            display: flex;
+        }
+
+        #sendName {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #sendName:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body id="divi">
+    <form id = "nameForm">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button id="sendName">Send Name</button>
+    </form>
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            const name = document.getElementById('nameInput').value;
+            if (name) {
+                localStorage.setItem('userName', name); // Save the name in local storage
+                window.location.href = '/map'; // Redirect to the map page
+            }
+        });
+    </script>
+</body>
+
+</html>
