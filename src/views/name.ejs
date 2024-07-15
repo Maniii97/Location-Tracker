@@ -40,15 +40,15 @@
 <body id="divi">
     <form id = "nameForm">
         <input type="text" id="nameInput" placeholder="Enter your name">
-        <button id="sendName">Send Name</button>
+        <button id="sendName">Join</button>
     </form>
     <script>
         document.getElementById('nameForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
+            event.preventDefault(); 
             const name = document.getElementById('nameInput').value;
             if (name) {
-                localStorage.setItem('userName', name); // Save the name in local storage
-                window.location.href = '/map'; // Redirect to the map page
+                localStorage.setItem('userName', name); 
+                window.location.href = '/map'; 
             }
         });
     </script>

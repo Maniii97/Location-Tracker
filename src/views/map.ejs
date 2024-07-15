@@ -22,10 +22,8 @@
         crossorigin="anonymous"></script>
 
     <script>
-        // Retrieve the user's name from local storage
         const userName = localStorage.getItem('userName');
         if (!userName) {
-            // If no name found, redirect back to the name input page
             window.location.href = '/';
         }
     </script>
